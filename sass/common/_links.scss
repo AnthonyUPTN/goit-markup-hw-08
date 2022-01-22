@@ -1,0 +1,41 @@
+.links {
+  display: flex;
+  justify-content: center;
+
+  &__list:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    fill: #afb1b8;
+
+    transition: fill $cubic;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    transition: background-color $cubic;
+
+    &:hover,
+    &:focus {
+      width: 44px;
+      height: 44px;
+      background-color: $action-text-color;
+      border-radius: 50%;
+    }
+
+    &:hover .links__icon,
+    &:focus .links__icon {
+      fill: $color-white;
+    }
+  }
+}

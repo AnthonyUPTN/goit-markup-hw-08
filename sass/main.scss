@@ -1,0 +1,18 @@
+// обнуления и переменные
+@import "./utils/reset";
+@import "./utils/variables";
+
+// общие стили
+@import "./common/common";
+@import "./common/links";
+
+//каркасс проэкта
+@import "./components/header";
+@import "./components/hero";
+@import "./components/modal";
+@import "./components/pluses";
+@import "./components/examples";
+@import "./components/team";
+@import "./components/clients";
+@import "./components/footer";
+@import "./components/portfolio";

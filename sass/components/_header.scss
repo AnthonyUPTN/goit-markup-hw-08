@@ -1,0 +1,94 @@
+.logo__leftpart {
+    color: $action-text-color;
+  }
+
+.header {
+  border-bottom: 1px solid #ececec;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  &__flex {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-list {
+    display: flex;
+    margin-left: 93px;
+  }
+
+  &__nav-item {
+    padding: 32px 0;
+
+    transition: color $cubic;
+  }
+
+  &__nav-item:not(:last-child),
+  .contacts:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  &__nav-item:hover,
+  &__nav-item:focus {
+    color: $action-text-color;
+  }
+
+  &__nav-link {
+    color: currentColor;
+    position: relative;
+  }
+
+  &__nav-link {
+    padding: 32px 0;
+  }
+
+  &__nav-link--current {
+    color: $action-text-color;
+  }
+
+  &__nav-link--current::after {
+    content: "";
+
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $action-text-color;
+
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.header-contacts {
+  display: flex;
+  margin-left: auto;
+
+  &__item:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  &__content {
+    display: flex;
+    color: $second-text-color;
+
+    transition: fill $cubic, transform $cubic, color $cubic;
+  }
+
+  &__icon {
+    margin-right: 10px;
+    fill: $second-text-color;
+  }
+
+  &__content:hover &__icon,
+  &__content:focus &__icon {
+    fill: $action-text-color;
+  }
+
+  &__content:hover,
+  &__content:hover {
+    color: $action-text-color;
+    transform: scale(1.15);
+  }
+}

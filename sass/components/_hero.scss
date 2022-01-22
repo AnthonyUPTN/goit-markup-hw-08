@@ -1,0 +1,47 @@
+.hero {
+  padding: 200px 0;
+  margin: 0 auto;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/hero-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $hero-bg-color;
+  max-width: 1400px;
+  letter-spacing: 0.06em;
+  text-align: center;
+
+  &__massage {
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+
+  &__button {
+    border-color: transparent;
+    border-radius: 4px;
+    margin-top: 40px;
+    padding: 10px 32px;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.87;
+    color: $color-white;
+    background-color: $action-text-color;
+
+    cursor: pointer;
+
+    transition: transform $cubic;
+  }
+
+  &__button:hover {
+    transform: scale(1.15);
+  }
+}

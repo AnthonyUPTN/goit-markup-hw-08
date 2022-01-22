@@ -1,0 +1,44 @@
+.clients {
+  &__list {
+    display: flex;
+    width: 100%;
+  }
+
+  &_item {
+    width: calc(100% / 6);
+  }
+
+  &_item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__icon {
+    width: 106px;
+    height: 60px;
+    fill: #afb1b8;
+    transition: transform $cubic;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+
+    border: 1px solid #afb1b8;
+    border-radius: 4px;
+    transition: border-color $cubic;
+  }
+
+  &__flex:hover,
+  &__flex:focus {
+    border-color: $action-text-color;
+  }
+
+  &__flex:hover &__icon,
+  &__flex:focus &__icon {
+    fill: $action-text-color;
+
+    transform: scale(1.25);
+  }
+}
