@@ -1,4 +1,12 @@
 .examples {
+  @media screen and(max-width: 1199px) {
+    display: none;
+  }
+  @media screen and(min-width: 1200px) {
+    width: 1400px;
+    display: block;
+    padding: 94px 0;
+  }
   &__list {
     display: flex;
   }
