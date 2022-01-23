@@ -3,16 +3,17 @@
     display: none;
   }
   @media screen and(min-width: 1200px) {
-    width: 1400px;
     display: block;
-    padding: 94px 0;
   }
+
   &__list {
     display: flex;
   }
 
   &__item {
     position: relative;
+
+    flex-basis: calc(100% - 2 * 30px) / 3;
 
     &:not(:last-child) {
       margin-right: 30px;

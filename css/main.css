@@ -58,7 +58,6 @@ img {
   .section {
     padding: 60px 15px;
     width: 768px;
-    background-color: teal;
   }
 }
 
@@ -541,6 +540,7 @@ textarea:focus {
         flex-wrap: wrap;
     margin-right: -30px;
     margin-bottom: -30px;
+    min-width: 768px;
   }
 }
 
@@ -549,6 +549,22 @@ textarea:focus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .pluses__item {
+    -ms-flex-preferred-size: calc(100% / 2 - 30px);
+        flex-basis: calc(100% / 2 - 30px);
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .pluses__item {
+    -ms-flex-preferred-size: calc(100% - 3 * 30px)/4;
+        flex-basis: calc(100% - 3 * 30px)/4;
   }
 }
 
@@ -561,20 +577,6 @@ textarea:focus {
 @media screen and (min-width: 1200px) {
   .pluses__item:not(:last-child) {
     margin-right: 30px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  .pluses__item {
-    width: calc(100% / 2 - 30px);
-    margin-right: 30px;
-    margin-bottom: 30px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .pluses__item {
-    width: calc(100% / 4 -30px);
   }
 }
 
@@ -620,9 +622,7 @@ textarea:focus {
 
 @media screen and (min-width: 1200px) {
   .examples {
-    width: 1400px;
     display: block;
-    padding: 94px 0;
   }
 }
 
@@ -634,6 +634,8 @@ textarea:focus {
 
 .examples__item {
   position: relative;
+  -ms-flex-preferred-size: calc(100% - 2 * 30px)/3;
+      flex-basis: calc(100% - 2 * 30px)/3;
 }
 
 .examples__item:not(:last-child) {
@@ -706,7 +708,8 @@ textarea:focus {
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .team__item {
-    width: calc(100% / 2 - 30px);
+    -ms-flex-preferred-size: calc(100% / 2 - 30px);
+        flex-basis: calc(100% / 2 - 30px);
     margin-right: 30px;
     margin-bottom: 30px;
   }
@@ -714,7 +717,8 @@ textarea:focus {
 
 @media screen and (min-width: 1200px) {
   .team__item {
-    width: calc(100% / 4 -30px);
+    -ms-flex-preferred-size: calc(100% - 3 * 30px)/4;
+        flex-basis: calc(100% - 3 * 30px)/4;
   }
 }
 
