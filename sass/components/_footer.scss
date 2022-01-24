@@ -1,7 +1,20 @@
 .footer {
   background-color: $footer-bg-color;
   line-height: 1.71;
-  padding: 60px 0;
+
+  @include mq(mobile-only) {
+    max-width: 480px;
+  }
+
+  @include mq(mobile-only) {
+    max-width: 768px;
+  }
+
+  @include mq(desktop) {
+    padding: 60px 0;
+
+    max-width: 1400px;
+  }
 
   &__flex-container {
     display: flex;
@@ -79,16 +92,22 @@
   }
 
   &__subscribe-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include mq(desktop) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__subscribe-input {
     padding: 15px 0 15px 16px;
     margin-right: 12px;
 
-    width: 358px;
+    width: 450px;
+
+    @include mq(desktop) {
+      width: 358px;
+    }
 
     background-color: $footer-bg-color;
     color: $color-white;
@@ -109,6 +128,7 @@
 
     background-color: $action-text-color;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
     border-radius: 4px;
     border: transparent;
 

@@ -1,32 +1,89 @@
 .hero {
-  padding: 200px 0;
-  margin: 0 auto;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $color-white;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $hero-bg-color;
+  background-size: cover;
+
+  padding: 118px 0;
+  max-width: 480px;
 
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url("../images/hero-bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: $hero-bg-color;
-  max-width: 1400px;
-  letter-spacing: 0.06em;
-  text-align: center;
+    url("../images/hero/hero480.jpg");
+
+  @include mq(retina) {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/hero/hero480@2x.jpg");
+  }
+
+  @include mq(tablet-only) {
+    padding: 118px 0;
+    max-width: 768px;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/hero/hero768.jpg");
+
+    @include mq(retina) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("../images/hero/hero768@2x.jpg");
+    }
+  }
+
+  @include mq(desktop) {
+    padding: 200px 0;
+    max-width: 1400px;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/hero/hero1200.jpg");
+
+    @include mq(retina) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("../images/hero/hero1200@2x.jpg");
+    }
+  }
 
   &__massage {
-    font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
-    text-transform: uppercase;
-    color: $color-white;
+    @include mq(tablet) {
+      font-size: 26px;
+      line-height: 1.62;
+    }
+
+    @include mq(desktop) {
+      font-size: 44px;
+      line-height: 1.36;
+    }
   }
 
   &__button {
-    border-color: transparent;
-    border-radius: 4px;
     margin-top: 40px;
     padding: 10px 32px;
 
@@ -36,6 +93,8 @@
     color: $color-white;
     background-color: $action-text-color;
 
+    border-color: transparent;
+    border-radius: 4px;
     cursor: pointer;
 
     transition: transform $cubic;
