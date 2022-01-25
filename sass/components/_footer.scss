@@ -2,27 +2,42 @@
   background-color: $footer-bg-color;
   line-height: 1.71;
 
-  @include mq(mobile-only) {
-    max-width: 480px;
-  }
-
-  @include mq(mobile-only) {
-    max-width: 768px;
-  }
-
   @include mq(desktop) {
     padding: 60px 0;
-
-    max-width: 1400px;
   }
 
-  &__flex-container {
-    display: flex;
-    align-items: baseline;
+  &__container {
+    @include mq(desktop) {
+      display: flex;
+      align-items: baseline;
+    }
+  }
+
+  &__contacts-join {
+    justify-content: center;
+    @include mq(tablet-only) {
+      margin-bottom: 60px;
+      display: flex;
+      align-items: baseline;
+    }
+    @include mq(desktop) {
+      display: flex;
+      align-items: baseline;
+    }
   }
 
   &__contacts-container {
-    margin-right: 70px;
+    @include mq(notDesktop) {
+      text-align: center;
+    }
+
+    @include mq(tablet-only) {
+      margin-right: 165px;
+    }
+
+    @include mq(desktop) {
+      margin-right: 70px;
+    }
   }
 
   &__logo--white {
@@ -54,7 +69,17 @@
   // блок join
 
   &__join-container {
-    margin-right: 93px;
+    @include mq(mobile-only) {
+      margin-bottom: 60px;
+    }
+
+    @include mq(notDesktop) {
+      text-align: center;
+    }
+
+    @include mq(desktop) {
+      margin-right: 93px;
+    }
   }
 
   &__join-title {
@@ -89,9 +114,19 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: $color-white;
+
+    text-align: center;
   }
 
   &__subscribe-form {
+    @include mq(notDesktop) {
+      display: block;
+      text-align: center;
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
     @include mq(desktop) {
       display: flex;
       align-items: center;
@@ -101,11 +136,15 @@
 
   &__subscribe-input {
     padding: 15px 0 15px 16px;
-    margin-right: 12px;
 
-    width: 450px;
+    @include mq(notDesktop) {
+      display: block;
+      margin-bottom: 20px;
+      width: 100%;
+    }
 
     @include mq(desktop) {
+      margin-right: 12px;
       width: 358px;
     }
 
@@ -119,9 +158,16 @@
   }
 
   &__subscribe-button {
-    display: flex;
-    align-items: center;
-    text-align: center;
+    @include mq(notDesktop) {
+      display: block;
+      margin: 0 auto;
+    }
+    @include mq(desktop) {
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
     padding: 10px 29px;
 
     text-align: center;

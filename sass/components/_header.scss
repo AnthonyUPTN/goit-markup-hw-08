@@ -1,6 +1,6 @@
 .logo__leftpart {
-    color: $action-text-color;
-  }
+  color: $action-text-color;
+}
 
 .header {
   border-bottom: 1px solid #ececec;
@@ -8,19 +8,171 @@
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  position: relative;
+
+  @include mq(mobile-only) {
+    padding: 16px 0;
+  }
+  @include mq(tablet-only) {
+    padding: 26px 0;
+  }
+
+  // МОБИЛЬНОЕ МЕНЮ
+
+  .mobile-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: transparent;
+
+    border: none;
+
+    &.menu-close {
+      position: fixed;
+      top: 10px;
+      right: 15px;
+      z-index: 10;
+    }
+
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+
+    & .menu-close {
+      display: none;
+    }
+    &.is-open .menu-close {
+      display: block;
+    }
+    &.is-open .menu-burger {
+      display: none;
+    }
+    @include mq(tablet) {
+      display: none;
+    }
+  }
+
+  .menu-container {
+    background-color: $color-white;
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    &.is-open {
+      display: block;
+      @include mq(tablet) {
+        display: none;
+      }
+    }
+
+    @include mq(mobile-only) {
+      display: none;
+      padding: 48px 40px;
+    }
+    @include mq(tablet) {
+      display: none;
+    }
+  }
+
+  .menu-nav {
+    margin-bottom: 302px;
+
+    text-align: left;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.17;
+    text-align: left;
+    letter-spacing: 0.02em;
+
+    &__nav-item:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    &--current {
+      color: $action-text-color;
+    }
+  }
+
+  .menu-socials {
+    display: flex;
+
+    &__list {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.02em;
+      color: $action-text-color;
+
+      &:not(:first-child) {
+        padding-left: 10px;
+      }
+      &:not(:last-child) {
+        border-right: 1px solid rgba(33, 33, 33, 0.2);
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .menu-contacts {
+    margin-bottom: 64px;
+    &__content {
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 1.17;
+      letter-spacing: 0.02em;
+      color: $action-text-color;
+    }
+    &__item--margin {
+      margin-bottom: 32px;
+    }
+
+    &__content--email {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1.16;
+      letter-spacing: 0.02em;
+
+      color: $second-text-color;
+    }
+  }
+
+  // обычные стили
 
   &__flex {
+    @include mq(mobile-only) {
+      display: flex;
+      justify-content: space-between;
+    }
     display: flex;
     align-items: center;
+    position: relative;
+  }
+
+  &__nav {
+    @include mq(mobile-only) {
+      display: none;
+    }
   }
 
   &__nav-list {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 93px;
   }
 
   &__nav-item {
-    padding: 32px 0;
+    @include mq(desktop) {
+      padding: 32px 0;
+    }
 
     transition: color $cubic;
   }
@@ -41,7 +193,9 @@
   }
 
   &__nav-link {
-    padding: 32px 0;
+    @include mq(desktop) {
+      padding: 32px 0;
+    }
   }
 
   &__nav-link--current {
@@ -64,6 +218,14 @@
 .header-contacts {
   display: flex;
   margin-left: auto;
+
+  @include mq(mobile-only) {
+    display: none;
+  }
+
+  @include mq(tablet-only) {
+    flex-direction: column;
+  }
 
   &__item:not(:last-child) {
     margin-right: 50px;

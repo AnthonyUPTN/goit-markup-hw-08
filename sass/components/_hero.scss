@@ -11,7 +11,6 @@
   background-size: cover;
 
   padding: 118px 0;
-  max-width: 480px;
 
   background-image: linear-gradient(
       to right,
@@ -30,7 +29,6 @@
   }
 
   @include mq(tablet-only) {
-    padding: 118px 0;
     max-width: 768px;
 
     background-image: linear-gradient(

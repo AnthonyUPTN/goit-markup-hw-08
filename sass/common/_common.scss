@@ -6,18 +6,30 @@ body {
   letter-spacing: 0.03em;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 img {
   display: block;
   width: 100%;
+  height: auto;
 }
 
 .logo {
   font-family: "Raleway", sans-serif;
-  color: currentColor;
   font-weight: bold;
-  font-size: 26px;
-  line-height: 1.19;
   letter-spacing: 0.03em;
+  color: currentColor;
+
+  @include mq(notDesktop) {
+    font-size: 24px;
+    line-height: 1.16;
+  }
+  @include mq(desktop) {
+    font-size: 26px;
+    line-height: 1.19;
+  }
 }
 
 .section__title {
@@ -41,29 +53,30 @@ img {
 }
 
 .section {
-  @include mq(mobile-only) {
-    padding: 60px 15px;
-    width: 480px;
-  }
-
-  @include mq(tablet-only) {
-    padding: 60px 15px;
-    width: 768px;
-  }
+  padding: 60px 0;
 
   @include mq(desktop) {
-    padding: 94px;
-    width: 1400px;
+    padding: 94px 0;
   }
 }
 
 .container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include mq(mobile-only) {
+    max-width: 480px;
+  }
+
+  @include mq(tablet) {
+    max-width: 768px;
+  }
+
   @include mq(desktop) {
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    max-width: 1200px;
   }
 }
 
