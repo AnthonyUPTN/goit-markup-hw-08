@@ -13,9 +13,9 @@
   @include mq(mobile-only) {
     padding: 16px 0;
   }
-  @include mq(tablet-only) {
-    padding: 26px 0;
-  }
+  // @include mq(tablet-only) {
+  //   padding: 26px 0;
+  // }
 
   // МОБИЛЬНОЕ МЕНЮ
 
@@ -170,15 +170,14 @@
   }
 
   &__nav-item {
-    @include mq(desktop) {
+    @include mq(tablet) {
       padding: 32px 0;
     }
 
     transition: color $cubic;
   }
 
-  &__nav-item:not(:last-child),
-  .contacts:not(:last-child) {
+  &__nav-item:not(:last-child) {
     margin-right: 50px;
   }
 
@@ -193,7 +192,7 @@
   }
 
   &__nav-link {
-    @include mq(desktop) {
+    @include mq(tablet) {
       padding: 32px 0;
     }
   }
@@ -219,6 +218,9 @@
   display: flex;
   margin-left: auto;
 
+  &__item--margin:not(:last-child) {
+    margin-bottom: 10px;
+  }
   @include mq(mobile-only) {
     display: none;
   }
@@ -228,7 +230,9 @@
   }
 
   &__item:not(:last-child) {
-    margin-right: 50px;
+    @include mq(desktop) {
+      margin-right: 50px;
+    }
   }
 
   &__content {
@@ -252,5 +256,11 @@
   &__content:hover {
     color: $action-text-color;
     transform: scale(1.15);
+  }
+}
+
+.contacts:not(:last-child) {
+  @include mq(desktop) {
+    margin-right: 50px;
   }
 }

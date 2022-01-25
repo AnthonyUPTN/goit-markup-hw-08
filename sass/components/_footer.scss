@@ -27,6 +27,10 @@
   }
 
   &__contacts-container {
+    @include mq(mobile-only) {
+      margin-bottom: 60px;
+    }
+
     @include mq(notDesktop) {
       text-align: center;
     }

@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
 
   opacity: 1;
   transition: opacity $cubic;
@@ -30,13 +30,15 @@
 
   transform: translate(-50%, -50%);
 
-  min-width: 528px;
-  min-height: 581px;
   background-color: $color-white;
 
   border-radius: 4px;
-}
 
+  @include mq(notDesktop) {
+    max-width: 450px;
+    width: 100%;
+  }
+}
 .modal-close {
   position: absolute;
   top: 8px;
@@ -71,6 +73,12 @@
   line-height: 1.15;
   letter-spacing: 0.03em;
   color: $primary-text-color;
+
+  @include mq(notDesktop) {
+    padding-left: 25px;
+    padding-right: 25px;
+    line-height: 1.5;
+  }
 }
 
 .modal-form {
@@ -177,13 +185,11 @@ textarea:focus {
   border: 1px solid $action-text-color;
 }
 
-.modal-policy {
-  margin-bottom: 30px;
-}
-
 .policy-line {
+  margin-bottom: 30px;
+
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .checkbox-hidden {
@@ -198,7 +204,7 @@ textarea:focus {
 }
 
 .checkbox-new {
-  margin-right: 10px;
+  margin-right: 5px;
 
   display: inline-block;
   width: 16px;
@@ -213,8 +219,17 @@ textarea:focus {
   background-image: url("../images/icon-check.svg");
 }
 
+.policy-text {
+  @include mq(notDesktop) {
+    font-size: 12px;
+    line-height: 1.16;
+
+    letter-spacing: 0.03em;
+  }
+}
+
 .license-rules {
-  margin-left: 4px;
+  margin-left: 2px;
 
   color: $action-text-color;
   text-decoration: underline;

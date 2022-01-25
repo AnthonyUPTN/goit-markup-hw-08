@@ -109,7 +109,7 @@
         </nav>
 
         <ul class="header-contacts">
-          <li class="header-contacts__item">
+          <li class="header-contacts__item header-contacts__item--margin">
             <a
               class="header-contacts__content"
               href="mailto:info@devstudio.com"
@@ -187,19 +187,20 @@
                     ></textarea>
                   </label>
                 </div>
-                <div class="modal-policy">
-                  <label class="policy-line" for="policy"
-                    ><input
-                      class="checkbox checkbox-hidden"
-                      type="checkbox"
-                      name="policy"
-                      id="policy"
-                    />
-                    <span class="checkbox-new"></span>Соглашаюсь с рассылкой и
-                    принимаю
-                    <a class="license-rules" href="">Условия договора</a>
-                  </label>
-                </div>
+
+                <label class="policy-line" for="policy"
+                  ><input
+                    class="checkbox checkbox-hidden"
+                    type="checkbox"
+                    name="policy"
+                    id="policy"
+                  />
+                  <span class="checkbox-new"></span
+                  ><span class="policy-text"
+                    >Соглашаюсь с рассылкой и принимаю
+                    <a class="license-rules" href="">Условия договора</a></span
+                  >
+                </label>
                 <button class="modal-submit" type="submit">Отправить</button>
               </form>
             </div>
