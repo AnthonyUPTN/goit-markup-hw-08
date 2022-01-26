@@ -238,6 +238,9 @@
   &__content {
     display: flex;
     color: $second-text-color;
+    @include mq(notDesktop) {
+      font-size: 12px;
+    }
 
     transition: fill $cubic, transform $cubic, color $cubic;
   }

@@ -1,11 +1,30 @@
 .portfolio-nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  @include mq(mobile-only) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  @include mq(tablet-only) {
+    margin-bottom: 30px;
+  }
+  @include mq(desktop) {
+    margin-bottom: 50px;
+  }
 
   &__list {
     &:not(:last-child) {
       margin-right: 8px;
+    }
+    @include mq(mobile-only) {
+      margin-bottom: 15px;
+    }
+    &:nth-child(n + 4) {
+      @include mq(mobile-only) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -40,16 +59,23 @@
 }
 
 .work-list {
-  margin-right: -30px;
-  margin-bottom: -30px;
-
+  margin: -15px;
   display: flex;
   flex-wrap: wrap;
 
   &__item {
-    margin-right: 30px;
-    margin-bottom: 30px;
-    width: calc(100% / 3 - 30px);
+    @include mq(mobile-only) {
+      @include grid(15px, 1);
+    }
+
+    @include mq(tablet-only) {
+      @include grid(15px, 2);
+    }
+
+    @include mq(desktop) {
+      @include grid(15px, 3);
+    }
+
     border: 1px solid #eeeeee;
     position: relative;
   }
