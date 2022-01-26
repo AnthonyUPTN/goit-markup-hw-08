@@ -179,6 +179,18 @@ img {
   color: #2196f3;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+  .logo-header {
+    margin-right: 88px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .logo-header {
+    margin-right: 93px;
+  }
+}
+
 .header {
   border-bottom: 1px solid #ececec;
   font-weight: 500;
@@ -374,7 +386,6 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 93px;
 }
 
 .header__nav-item {
